@@ -106,9 +106,11 @@ void esp8266_init(void)
 {
 	esp8266_send_cmd("ATE0","OK",200);
 	delay_ms(200);
+	esp8266_send_cmd("AT+CWAUTOCONN=0","OK",200);
+	delay_ms(200);
 	esp8266_send_cmd("AT+CWMODE=1","OK",200);
 	delay_ms(200);
-	esp8266_send_cmd("AT+RST","OK",200);
+	esp8266_send_cmd("AT+RST","Version",200);
 	delay_ms(4000);
 	esp8266_send_cmd("AT+CIPMUX=0","OK",200);
 	delay_ms(200);
@@ -116,7 +118,7 @@ void esp8266_init(void)
 //	delay_ms(200);
 	esp8266_send_cmd("AT+CWJAP=\"zx\",\"12345678\"","OK",200);
 	delay_ms(4000);
-	esp8266_send_cmd("AT+CIPSTART=\"TCP\",\"10.96.175.23\",9000","OK",200);
+	esp8266_send_cmd("AT+CIPSTART=\"TCP\",\"10.132.12.29\",9000","OK",200);
 	delay_ms(4000);
 	esp8266_send_cmd("AT+CIPMODE=1","OK",200);
 	delay_ms(200);

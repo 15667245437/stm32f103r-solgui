@@ -3,7 +3,7 @@
 <title>Static Call Graph - [103r\103r.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image 103r\103r.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060300: Last Updated: Mon Nov 01 18:54:37 2021
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060300: Last Updated: Tue Nov 02 12:52:18 2021
 <BR><P>
 <H3>Maximum Stack Usage =        160 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -455,6 +455,10 @@ Global Symbols
 <LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 </UL>
 
+<P><STRONG><a name="[bc]"></a>__decompress</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __dczerorl.o(.text), UNUSED)
+
+<P><STRONG><a name="[bd]"></a>__decompress0</STRONG> (Thumb, 58 bytes, Stack size unknown bytes, __dczerorl.o(.text), UNUSED)
+
 <P><STRONG><a name="[5c]"></a>ADC_ConversionStop_Disable</STRONG> (Thumb, 86 bytes, Stack size 16 bytes, stm32f1xx_hal_adc.o(i.ADC_ConversionStop_Disable))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = ADC_ConversionStop_Disable
 </UL>
@@ -808,7 +812,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Init
 </UL>
 
-<P><STRONG><a name="[2f]"></a>USART1_IRQHandler</STRONG> (Thumb, 74 bytes, Stack size 8 bytes, stm32f1xx_it.o(i.USART1_IRQHandler))
+<P><STRONG><a name="[2f]"></a>USART1_IRQHandler</STRONG> (Thumb, 76 bytes, Stack size 8 bytes, stm32f1xx_it.o(i.USART1_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = USART1_IRQHandler
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f103xe.o(RESET)
@@ -825,11 +829,11 @@ Global Symbols
 <LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
 </UL>
 
-<P><STRONG><a name="[bc]"></a>__1vsprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0vsprintf), UNUSED)
+<P><STRONG><a name="[be]"></a>__1vsprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0vsprintf), UNUSED)
 
-<P><STRONG><a name="[bd]"></a>__2vsprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0vsprintf), UNUSED)
+<P><STRONG><a name="[bf]"></a>__2vsprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0vsprintf), UNUSED)
 
-<P><STRONG><a name="[be]"></a>__c89vsprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0vsprintf), UNUSED)
+<P><STRONG><a name="[c0]"></a>__c89vsprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0vsprintf), UNUSED)
 
 <P><STRONG><a name="[ab]"></a>vsprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0vsprintf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = vsprintf
@@ -837,11 +841,11 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart1printf
 </UL>
 
-<P><STRONG><a name="[bf]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
+<P><STRONG><a name="[c1]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
 
-<P><STRONG><a name="[c0]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
+<P><STRONG><a name="[c2]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
 
-<P><STRONG><a name="[c1]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
+<P><STRONG><a name="[c3]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
 
 <P><STRONG><a name="[90]"></a>ack_determine</STRONG> (Thumb, 278 bytes, Stack size 104 bytes, esp8266.o(i.ack_determine))
 <BR><BR>[Stack]<UL><LI>Max Depth = 116<LI>Call Chain = ack_determine &rArr; strstr
@@ -892,7 +896,7 @@ Global Symbols
 <LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iic_ack
 </UL>
 
-<P><STRONG><a name="[99]"></a>esp8266_init</STRONG> (Thumb, 138 bytes, Stack size 8 bytes, esp8266.o(i.esp8266_init))
+<P><STRONG><a name="[99]"></a>esp8266_init</STRONG> (Thumb, 154 bytes, Stack size 8 bytes, esp8266.o(i.esp8266_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 148<LI>Call Chain = esp8266_init &rArr; esp8266_send_cmd &rArr; ack_determine &rArr; strstr
 </UL>
 <BR>[Calls]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
@@ -901,7 +905,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[97]"></a>esp8266_send_cmd</STRONG> (Thumb, 110 bytes, Stack size 24 bytes, esp8266.o(i.esp8266_send_cmd))
+<P><STRONG><a name="[97]"></a>esp8266_send_cmd</STRONG> (Thumb, 112 bytes, Stack size 24 bytes, esp8266.o(i.esp8266_send_cmd))
 <BR><BR>[Stack]<UL><LI>Max Depth = 140<LI>Call Chain = esp8266_send_cmd &rArr; ack_determine &rArr; strstr
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart1printf

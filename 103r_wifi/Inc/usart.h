@@ -34,7 +34,7 @@ extern "C" {
 extern UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN Private defines */
-#define max_buf 100
+#define max_buf 800
 /* USER CODE END Private defines */
 
 void MX_USART1_UART_Init(void);
