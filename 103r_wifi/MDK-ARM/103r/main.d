@@ -36,6 +36,7 @@
 103r\main.o: ../Inc/gpio.h
 103r\main.o: ../Inc/delay.h
 103r\main.o: ../Inc/oled.h
+103r\main.o: ../Inc/key.h
 103r\main.o: ../Inc/iic.h
 103r\main.o: ../Inc/esp8266.h
 103r\main.o: ..\SOLGUI\SOLGUI_Include.h

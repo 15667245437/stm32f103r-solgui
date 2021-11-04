@@ -15,7 +15,7 @@ u8 esp8266_send_cmd(u8* cmd, u8* ack, u8 waittime)
 	u8 res=0;
 	uart1printf("%s\r\n",cmd);
 	ack_determine(cmd);
-	oled_printf(cmd_printf,1);
+//	oled_printf(cmd_printf,1);
 	while(waittime--)
 	{
 		delay_ms(10);
@@ -24,12 +24,11 @@ u8 esp8266_send_cmd(u8* cmd, u8* ack, u8 waittime)
 			if(atk_8266_check_cmd(ack))
 			{
 				res=0;
-				oled_printf(check_printf,3);
+//				oled_printf(check_printf,3);
 				break;
 			}
-			res=2;//get the wrong return
-			oled_printf("get the wrong return",1);
-			while(1);
+			res=2;//get the wrong return.
+//			oled_printf("get the wrong return",1);
 		}
 	}
 	usart1_rx_sta=0;
@@ -116,14 +115,14 @@ void esp8266_init(void)
 	delay_ms(200);
 //	esp8266_send_cmd("AT+CIPCLOSE","OK",200);
 //	delay_ms(200);
-	esp8266_send_cmd("AT+CWJAP=\"zx\",\"12345678\"","OK",200);
-	delay_ms(4000);
-	esp8266_send_cmd("AT+CIPSTART=\"TCP\",\"10.132.12.29\",9000","OK",200);
-	delay_ms(4000);
-	esp8266_send_cmd("AT+CIPMODE=1","OK",200);
-	delay_ms(200);
-	esp8266_send_cmd("AT+CIPSEND","OK",200);
-	delay_ms(200);
+//	esp8266_send_cmd("AT+CWJAP=\"zx\",\"12345678\"","OK",200);
+//	delay_ms(4000);
+//	esp8266_send_cmd("AT+CIPSTART=\"TCP\",\"10.132.12.29\",9000","OK",200);
+//	delay_ms(4000);
+//	esp8266_send_cmd("AT+CIPMODE=1","OK",200);
+//	delay_ms(200);
+//	esp8266_send_cmd("AT+CIPSEND","OK",200);
+//	delay_ms(200);
 	
 }
 

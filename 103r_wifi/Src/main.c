@@ -28,6 +28,7 @@
 /* USER CODE BEGIN Includes */
 #include "delay.h"
 #include "oled.h"
+#include "key.h"
 #include "iic.h"
 #include "esp8266.h"
 #include "SOLGUI_Include.h"
@@ -50,7 +51,8 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+vu8 key=0;
+MENU_PAGE ee_list,ee_a,temp_view,ee_b,ee_c;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -77,6 +79,7 @@ int main(void)
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+
   HAL_Init();
 
   /* USER CODE BEGIN Init */
@@ -97,6 +100,7 @@ int main(void)
   MX_TIM6_Init();
   /* USER CODE BEGIN 2 */
 	iic_init();
+	SOLGUI_Init(&ee_list);
 //	atk_8266_quit_trans();
 //	esp8266_init();
   /* USER CODE END 2 */
@@ -106,7 +110,10 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+		key=KEY_Scan(0);
+		SOLGUI_InputKey(key);
+		SOLGUI_Menu_PageStage();
+		SOLGUI_Refresh();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -158,7 +165,30 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-
+__M_PAGE(ee_list,"list",PAGE_NULL,
+{
+	SOLGUI_Cursor(6,0,3);
+	SOLGUI_Widget_GotoPage(0,&ee_a);
+	SOLGUI_Widget_GotoPage(1,&ee_b);
+	SOLGUI_Widget_GotoPage(2,&ee_c);
+});
+__M_PAGE(ee_a,"EEA",&ee_list,
+{
+	SOLGUI_Cursor(0,6,6);
+	SOLGUI_Widget_GotoPage(0,&temp_view);
+});
+__M_PAGE(temp_view,"temp_view",&ee_a,
+{
+	
+});
+__M_PAGE(ee_b,"EEB",&ee_list,
+{
+	
+});
+__M_PAGE(ee_c,"EEC",&ee_list,
+{
+	
+});
 /* USER CODE END 4 */
 
 /**
