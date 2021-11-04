@@ -30,6 +30,7 @@
 #include "oled.h"
 #include "iic.h"
 #include "esp8266.h"
+#include "SOLGUI_Include.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -96,11 +97,8 @@ int main(void)
   MX_TIM6_Init();
   /* USER CODE BEGIN 2 */
 	iic_init();
-	oled_init();
-	oled_on();
-	delay_ms(100);
-	atk_8266_quit_trans();
-	esp8266_init();
+//	atk_8266_quit_trans();
+//	esp8266_init();
   /* USER CODE END 2 */
 
   /* Infinite loop */

@@ -335,7 +335,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xE</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;                         ../Drivers/STM32F1xx_HAL_Driver/Inc;                         ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;                         ../Drivers/CMSIS/Device/ST/STM32F1xx/Include;                         ../Drivers/CMSIS/Include</IncludePath>
+              <IncludePath>../Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;..\SOLGUI;..\SOLGUI\Font</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -833,6 +833,66 @@
               <FileName>system_stm32f1xx.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Src/system_stm32f1xx.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>SOLGUI</GroupName>
+          <Files>
+            <File>
+              <FileName>SOLGUI_GBasic.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SOLGUI\SOLGUI_GBasic.c</FilePath>
+            </File>
+            <File>
+              <FileName>SOLGUI_Hardware.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SOLGUI\SOLGUI_Hardware.c</FilePath>
+            </File>
+            <File>
+              <FileName>SOLGUI_Menu.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SOLGUI\SOLGUI_Menu.c</FilePath>
+            </File>
+            <File>
+              <FileName>SOLGUI_Picture.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SOLGUI\SOLGUI_Picture.c</FilePath>
+            </File>
+            <File>
+              <FileName>SOLGUI_Printf.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SOLGUI\SOLGUI_Printf.c</FilePath>
+            </File>
+            <File>
+              <FileName>SOLGUI_Widget.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SOLGUI\SOLGUI_Widget.c</FilePath>
+            </File>
+            <File>
+              <FileName>Font4x6_ASCII.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SOLGUI\Font\Font4x6_ASCII.c</FilePath>
+            </File>
+            <File>
+              <FileName>Font6x8_ASCII.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SOLGUI\Font\Font6x8_ASCII.c</FilePath>
+            </File>
+            <File>
+              <FileName>Font8x8_ASCII.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SOLGUI\Font\Font8x8_ASCII.c</FilePath>
+            </File>
+            <File>
+              <FileName>Font8x10_ASCII.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SOLGUI\Font\Font8x10_ASCII.c</FilePath>
+            </File>
+            <File>
+              <FileName>SOLGUI_Common.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SOLGUI\SOLGUI_Common.c</FilePath>
             </File>
           </Files>
         </Group>

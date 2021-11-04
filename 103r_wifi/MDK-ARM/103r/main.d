@@ -38,3 +38,13 @@
 103r\main.o: ../Inc/oled.h
 103r\main.o: ../Inc/iic.h
 103r\main.o: ../Inc/esp8266.h
+103r\main.o: ..\SOLGUI\SOLGUI_Include.h
+103r\main.o: ..\SOLGUI\SOLGUI_Type.h
+103r\main.o: ..\SOLGUI\SOLGUI_Config.h
+103r\main.o: ..\SOLGUI\SOLGUI_Common.h
+103r\main.o: ..\SOLGUI\SOLGUI_Menu.h
+103r\main.o: ..\SOLGUI\SOLGUI_Printf.h
+103r\main.o: D:\program\KEIL\software\ARM\ARMCC\Bin\..\include\stdarg.h
+103r\main.o: ..\SOLGUI\SOLGUI_GBasic.h
+103r\main.o: ..\SOLGUI\SOLGUI_Picture.h
+103r\main.o: ..\SOLGUI\SOLGUI_Widget.h

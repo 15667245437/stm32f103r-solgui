@@ -28,6 +28,17 @@
 "103r\stm32f1xx_hal_tim_ex.o"
 "103r\stm32f1xx_hal_uart.o"
 "103r\system_stm32f1xx.o"
+"103r\solgui_gbasic.o"
+"103r\solgui_hardware.o"
+"103r\solgui_menu.o"
+"103r\solgui_picture.o"
+"103r\solgui_printf.o"
+"103r\solgui_widget.o"
+"103r\font4x6_ascii.o"
+"103r\font6x8_ascii.o"
+"103r\font8x8_ascii.o"
+"103r\font8x10_ascii.o"
+"103r\solgui_common.o"
 --library_type=microlib --strict --scatter "103r\103r.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

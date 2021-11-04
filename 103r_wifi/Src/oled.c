@@ -78,7 +78,7 @@ void oled_off(void)
 
 u8 OLED_GRAM[128][8];
 
-void oled_refreshram(void)
+void oled_refreshram(u8 a[128][8])
 {
 	u8 i,n;		    
 	for(i=0;i<8;i++)  
@@ -86,7 +86,7 @@ void oled_refreshram(void)
 		writecmd (0xb0+i);    //设置页地址（0~7）
 		writecmd (0x00);      //设置显示位置—列低地址
 		writecmd (0x10);      //设置显示位置—列高地址   
-		for(n=0;n<128;n++) writedata(OLED_GRAM[n][i]); 
+		for(n=0;n<128;n++) writedata(a[n][i]); 
 	}
 }
 
@@ -174,19 +174,19 @@ void oled_fill(u8 x1,u8 y1,u8 x2,u8 y2)
 	{
 		for(y=y1;y<=y2;y++) oled_setpos(x,y,1);
 	}
-	oled_refreshram();
+	oled_refreshram(OLED_GRAM);
 }
 
 void oled_clear()
 {
 	u8 i,n;  
 	for(i=0;i<8;i++)for(n=0;n<128;n++) OLED_GRAM[n][i]=0X00;  
-	oled_refreshram();
+	oled_refreshram(OLED_GRAM);
 }
 
 void oled_printf(unsigned char* strings, u8 rows)
 {
 	oled_clear();
 	oled_showstr(1,(rows-1)*12-1,strings,12);
-	oled_refreshram();
+	oled_refreshram(OLED_GRAM);
 }
