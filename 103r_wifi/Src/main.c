@@ -52,7 +52,7 @@
 
 /* USER CODE BEGIN PV */
 vu8 key=0;
-MENU_PAGE ee_list,ee_a,temp_view,ee_b,ee_c;
+MENU_PAGE wifi_list,wifi_init,wifi_conn,tcp_conn,senddata;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -63,7 +63,35 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+u32 switch_reg=0;
+__M_PAGE(wifi_list,"wifi_list",PAGE_NULL,
+{
+	SOLGUI_Cursor(6,0,4);
+	SOLGUI_Widget_GotoPage(0,&wifi_init);
+	SOLGUI_Widget_GotoPage(1,&wifi_conn);
+	SOLGUI_Widget_GotoPage(2,&tcp_conn);
+	SOLGUI_Widget_GotoPage(3,&senddata);
+});
+__M_PAGE(wifi_init,"wifi_init",&wifi_list,
+{
+	SOLGUI_Cursor(0,0,1);
+	SOLGUI_Widget_Switch(0,"WIFI init ON/OFF",&switch_reg,0);
+});
+__M_PAGE(wifi_conn,"wifi_conn",&wifi_list,
+{
+	SOLGUI_Cursor(0,0,1);
+	SOLGUI_Widget_Switch(0,"WIFI connection ON/OFF",&switch_reg,1);
+});
+__M_PAGE(tcp_conn,"tcp_conn",&wifi_list,
+{
+	SOLGUI_Cursor(0,0,1);
+	SOLGUI_Widget_Switch(0,"TCP connection ON/OFF",&switch_reg,2);
+});
+__M_PAGE(senddata,"senddata",&wifi_list,
+{
+	SOLGUI_Cursor(0,0,1);
+	SOLGUI_Widget_Switch(0,"send mode ON/OFF",&switch_reg,3);
+});
 /* USER CODE END 0 */
 
 /**
@@ -100,9 +128,8 @@ int main(void)
   MX_TIM6_Init();
   /* USER CODE BEGIN 2 */
 	iic_init();
-	SOLGUI_Init(&ee_list);
-//	atk_8266_quit_trans();
-//	esp8266_init();
+	SOLGUI_Init(&wifi_list);
+	atk_8266_quit_trans();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -114,6 +141,10 @@ int main(void)
 		SOLGUI_InputKey(key);
 		SOLGUI_Menu_PageStage();
 		SOLGUI_Refresh();
+//		esp_initjudge();
+//		esp_connectjudge();
+//		esp_tcpjudge();
+//		esp_senddatajudge();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -165,30 +196,7 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-__M_PAGE(ee_list,"list",PAGE_NULL,
-{
-	SOLGUI_Cursor(6,0,3);
-	SOLGUI_Widget_GotoPage(0,&ee_a);
-	SOLGUI_Widget_GotoPage(1,&ee_b);
-	SOLGUI_Widget_GotoPage(2,&ee_c);
-});
-__M_PAGE(ee_a,"EEA",&ee_list,
-{
-	SOLGUI_Cursor(0,6,6);
-	SOLGUI_Widget_GotoPage(0,&temp_view);
-});
-__M_PAGE(temp_view,"temp_view",&ee_a,
-{
-	
-});
-__M_PAGE(ee_b,"EEB",&ee_list,
-{
-	
-});
-__M_PAGE(ee_c,"EEC",&ee_list,
-{
-	
-});
+
 /* USER CODE END 4 */
 
 /**

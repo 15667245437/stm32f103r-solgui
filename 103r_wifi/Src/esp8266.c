@@ -8,7 +8,8 @@ u16 usart1_rx_sta=0x0000;
 extern u8 usart1_rx_buf[max_buf];
 char cmd_printf[100]="";
 char check_printf[100]="";
-
+extern int switch_reg;
+u16 esp8266_reg=0x0000;
 
 u8 esp8266_send_cmd(u8* cmd, u8* ack, u8 waittime)
 {
@@ -110,20 +111,9 @@ void esp8266_init(void)
 	esp8266_send_cmd("AT+CWMODE=1","OK",200);
 	delay_ms(200);
 	esp8266_send_cmd("AT+RST","Version",200);
-	delay_ms(4000);
+	delay_ms(2000);
 	esp8266_send_cmd("AT+CIPMUX=0","OK",200);
 	delay_ms(200);
-//	esp8266_send_cmd("AT+CIPCLOSE","OK",200);
-//	delay_ms(200);
-//	esp8266_send_cmd("AT+CWJAP=\"zx\",\"12345678\"","OK",200);
-//	delay_ms(4000);
-//	esp8266_send_cmd("AT+CIPSTART=\"TCP\",\"10.132.12.29\",9000","OK",200);
-//	delay_ms(4000);
-//	esp8266_send_cmd("AT+CIPMODE=1","OK",200);
-//	delay_ms(200);
-//	esp8266_send_cmd("AT+CIPSEND","OK",200);
-//	delay_ms(200);
-	
 }
 
 void esp8266_send_data(u8* data)
@@ -144,4 +134,66 @@ u8 atk_8266_quit_trans(void)
 	USART1->DR='+';      
 	delay_ms(500);					//µÈ´ý500ms
 	esp8266_send_cmd("AT","OK",20);//ÍË³öÍ¸´«ÅÐ¶Ï.
+}
+
+void esp_initjudge(void)
+{
+	static u8 flag=1;
+	if((switch_reg>>0)&0x01) 
+	{
+		if(flag==1)
+		{
+			esp8266_init();
+			flag=0;
+		}
+	}
+	else flag=1;
+}
+
+void esp_connectjudge(void)
+{
+	static u8 flag=1;
+	if((switch_reg>>1)&0x01) 
+	{
+		if(flag==1)
+		{
+			esp8266_send_cmd("AT+CWJAP=\"zx\",\"12345678\"","OK",200);
+			delay_ms(2000);
+			flag=0;
+		}
+		
+	}
+	else 
+	{
+		esp8266_send_cmd("AT+CWQAP","OK",200);
+		delay_ms(200);
+		flag=1;
+	}
+}
+
+void esp_tcpjudge(void)
+{
+	if((switch_reg>>2)&0x01) 
+	{
+		esp8266_send_cmd("AT+CIPSTART=\"TCP\",\"10.132.12.29\",9000","OK",200);
+		delay_ms(4000);
+	}
+	else 
+	{
+		esp8266_send_cmd("AT+CIPCLOSE","OK",200);
+		delay_ms(20);
+	}
+}
+void esp_senddatajudge(void)
+{
+	if((switch_reg>>3)&0x01) 
+	{
+		esp8266_send_cmd("AT+CIPSEND","OK",200);
+		delay_ms(200);
+	}
+	else 
+	{
+		atk_8266_quit_trans();
+		delay_ms(200);
+	}
 }
