@@ -139,12 +139,13 @@ int main(void)
     /* USER CODE END WHILE */
 		key=KEY_Scan(0);
 		SOLGUI_InputKey(key);
-		SOLGUI_Menu_PageStage();
-		SOLGUI_Refresh();
-//		esp_initjudge();
+		
+		esp_initjudge();
 //		esp_connectjudge();
 //		esp_tcpjudge();
 //		esp_senddatajudge();
+		SOLGUI_Menu_PageStage();
+		SOLGUI_Refresh();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

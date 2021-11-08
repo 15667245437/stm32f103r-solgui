@@ -92,6 +92,7 @@ Section Cross References
     main.o(i.main) refers to esp8266.o(i.atk_8266_quit_trans) for atk_8266_quit_trans
     main.o(i.main) refers to key.o(i.KEY_Scan) for KEY_Scan
     main.o(i.main) refers to solgui_menu.o(i.SOLGUI_InputKey) for SOLGUI_InputKey
+    main.o(i.main) refers to esp8266.o(i.esp_initjudge) for esp_initjudge
     main.o(i.main) refers to solgui_menu.o(i.SOLGUI_Menu_PageStage) for SOLGUI_Menu_PageStage
     main.o(i.main) refers to solgui_common.o(i.SOLGUI_Refresh) for SOLGUI_Refresh
     main.o(i.main) refers to main.o(.data) for .data
@@ -179,6 +180,7 @@ Section Cross References
     esp8266.o(i.esp_tcpjudge) refers to esp8266.o(i.esp8266_send_cmd) for esp8266_send_cmd
     esp8266.o(i.esp_tcpjudge) refers to delay.o(i.delay_ms) for delay_ms
     esp8266.o(i.esp_tcpjudge) refers to main.o(.data) for switch_reg
+    esp8266.o(i.esp_tcpjudge) refers to esp8266.o(.data) for .data
     key.o(i.KEY_Scan) refers to stm32f1xx_hal_gpio.o(i.HAL_GPIO_ReadPin) for HAL_GPIO_ReadPin
     key.o(i.KEY_Scan) refers to delay.o(i.delay_ms) for delay_ms
     key.o(i.KEY_Scan) refers to key.o(.data) for .data
@@ -918,12 +920,10 @@ Removing Unused input sections from the image.
     Removing esp8266.o(.rev16_text), (4 bytes).
     Removing esp8266.o(.revsh_text), (4 bytes).
     Removing esp8266.o(.rrx_text), (6 bytes).
-    Removing esp8266.o(i.esp8266_init), (156 bytes).
     Removing esp8266.o(i.esp8266_send_data), (32 bytes).
-    Removing esp8266.o(i.esp_connectjudge), (116 bytes).
-    Removing esp8266.o(i.esp_initjudge), (40 bytes).
+    Removing esp8266.o(i.esp_connectjudge), (124 bytes).
     Removing esp8266.o(i.esp_senddatajudge), (60 bytes).
-    Removing esp8266.o(i.esp_tcpjudge), (108 bytes).
+    Removing esp8266.o(i.esp_tcpjudge), (136 bytes).
     Removing esp8266.o(.data), (2 bytes).
     Removing key.o(.rev16_text), (4 bytes).
     Removing key.o(.revsh_text), (4 bytes).
@@ -1399,7 +1399,7 @@ Removing Unused input sections from the image.
     Removing d2f.o(.text), (56 bytes).
     Removing fepilogue.o(.text), (110 bytes).
 
-534 unused section(s) (total 45517 bytes) removed from the image.
+532 unused section(s) (total 45357 bytes) removed from the image.
 
 ==============================================================================
 
@@ -1436,22 +1436,22 @@ Image Symbol Table
     ../clib/../cmprslib/zerorunl2.c          0x00000000   Number         0  __dczerorl2.o ABSOLUTE
     ../clib/microlib/division.c              0x00000000   Number         0  uldiv.o ABSOLUTE
     ../clib/microlib/division.c              0x00000000   Number         0  uidiv.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
-    ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
-    ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfa.o ABSOLUTE
     ../clib/microlib/stdio/fputc.c           0x00000000   Number         0  fputc.o ABSOLUTE
     ../clib/microlib/stdio/semi.s            0x00000000   Number         0  semi.o ABSOLUTE
@@ -1462,23 +1462,23 @@ Image Symbol Table
     ../clib/microlib/string/strlen.c         0x00000000   Number         0  strlen.o ABSOLUTE
     ../clib/microlib/string/strncpy.c        0x00000000   Number         0  strncpy.o ABSOLUTE
     ../clib/microlib/string/strstr.c         0x00000000   Number         0  strstr.o ABSOLUTE
-    ../clib/microlib/stubs.s                 0x00000000   Number         0  iusesemip.o ABSOLUTE
     ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
+    ../clib/microlib/stubs.s                 0x00000000   Number         0  iusesemip.o ABSOLUTE
     ../fplib/microlib/d2f.c                  0x00000000   Number         0  d2f.o ABSOLUTE
     ../fplib/microlib/f2d.c                  0x00000000   Number         0  f2d.o ABSOLUTE
     ../fplib/microlib/fpadd.c                0x00000000   Number         0  dadd.o ABSOLUTE
     ../fplib/microlib/fpadd.c                0x00000000   Number         0  fadd.o ABSOLUTE
-    ../fplib/microlib/fpdiv.c                0x00000000   Number         0  ddiv.o ABSOLUTE
     ../fplib/microlib/fpdiv.c                0x00000000   Number         0  fdiv.o ABSOLUTE
+    ../fplib/microlib/fpdiv.c                0x00000000   Number         0  ddiv.o ABSOLUTE
     ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  depilogue.o ABSOLUTE
     ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  fepilogue.o ABSOLUTE
-    ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixui.o ABSOLUTE
     ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixi.o ABSOLUTE
     ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixul.o ABSOLUTE
     ../fplib/microlib/fpfix.c                0x00000000   Number         0  ffixui.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixui.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  dflti.o ABSOLUTE
     ../fplib/microlib/fpflt.c                0x00000000   Number         0  ffltui.o ABSOLUTE
     ../fplib/microlib/fpflt.c                0x00000000   Number         0  dfltui.o ABSOLUTE
-    ../fplib/microlib/fpflt.c                0x00000000   Number         0  dflti.o ABSOLUTE
     ../fplib/microlib/fpmul.c                0x00000000   Number         0  fmul.o ABSOLUTE
     ../fplib/microlib/fpmul.c                0x00000000   Number         0  dmul.o ABSOLUTE
     ..\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal.c 0x00000000   Number         0  stm32f1xx_hal.o ABSOLUTE
@@ -1690,41 +1690,44 @@ Image Symbol Table
     i.atk_8266_quit_trans                    0x08003534   Section        0  esp8266.o(i.atk_8266_quit_trans)
     i.delay_ms                               0x08003584   Section        0  delay.o(i.delay_ms)
     i.delay_us                               0x0800359e   Section        0  delay.o(i.delay_us)
-    i.esp8266_send_cmd                       0x080035cc   Section        0  esp8266.o(i.esp8266_send_cmd)
-    i.iic_ack                                0x08003634   Section        0  iic.o(i.iic_ack)
-    i.iic_init                               0x08003674   Section        0  iic.o(i.iic_init)
-    i.iic_start                              0x08003688   Section        0  iic.o(i.iic_start)
-    i.iic_stop                               0x080036c8   Section        0  iic.o(i.iic_stop)
-    i.iic_write_byte                         0x0800370c   Section        0  iic.o(i.iic_write_byte)
-    i.main                                   0x0800376c   Section        0  main.o(i.main)
-    i.oled_clear                             0x080037b8   Section        0  oled.o(i.oled_clear)
-    i.oled_init                              0x080037e8   Section        0  oled.o(i.oled_init)
-    i.oled_refreshram                        0x080038a4   Section        0  oled.o(i.oled_refreshram)
-    i.systick_delayinit                      0x080038e0   Section        0  delay.o(i.systick_delayinit)
-    i.uart1printf                            0x080038fc   Section        0  usart.o(i.uart1printf)
-    i.writecmd                               0x0800393c   Section        0  oled.o(i.writecmd)
-    i.writedata                              0x0800396a   Section        0  oled.o(i.writedata)
-    .constdata                               0x08003998   Section       16  system_stm32f1xx.o(.constdata)
-    .constdata                               0x080039a8   Section        8  system_stm32f1xx.o(.constdata)
-    .constdata                               0x080039b0   Section       27  solgui_widget.o(.constdata)
-    .constdata                               0x080039cb   Section       27  solgui_widget.o(.constdata)
-    .constdata                               0x080039e6   Section       29  solgui_widget.o(.constdata)
-    .constdata                               0x08003a03   Section       15  solgui_widget.o(.constdata)
-    .constdata                               0x08003a12   Section        3  solgui_widget.o(.constdata)
-    .constdata                               0x08003a15   Section      848  font6x8_ascii.o(.constdata)
-    .conststring                             0x08003d68   Section       58  main.o(.conststring)
-    .conststring                             0x08003da4   Section        6  solgui_widget.o(.conststring)
-    .conststring                             0x08003dac   Section        6  solgui_widget.o(.conststring)
-    .conststring                             0x08003db4   Section        7  solgui_widget.o(.conststring)
-    .conststring                             0x08003dbc   Section        7  solgui_widget.o(.conststring)
-    .conststring                             0x08003dc4   Section        5  solgui_widget.o(.conststring)
+    i.esp8266_init                           0x080035cc   Section        0  esp8266.o(i.esp8266_init)
+    i.esp8266_send_cmd                       0x08003668   Section        0  esp8266.o(i.esp8266_send_cmd)
+    i.esp_initjudge                          0x080036d0   Section        0  esp8266.o(i.esp_initjudge)
+    i.iic_ack                                0x080036fc   Section        0  iic.o(i.iic_ack)
+    i.iic_init                               0x0800373c   Section        0  iic.o(i.iic_init)
+    i.iic_start                              0x08003750   Section        0  iic.o(i.iic_start)
+    i.iic_stop                               0x08003790   Section        0  iic.o(i.iic_stop)
+    i.iic_write_byte                         0x080037d4   Section        0  iic.o(i.iic_write_byte)
+    i.main                                   0x08003834   Section        0  main.o(i.main)
+    i.oled_clear                             0x08003884   Section        0  oled.o(i.oled_clear)
+    i.oled_init                              0x080038b4   Section        0  oled.o(i.oled_init)
+    i.oled_refreshram                        0x08003970   Section        0  oled.o(i.oled_refreshram)
+    i.systick_delayinit                      0x080039ac   Section        0  delay.o(i.systick_delayinit)
+    i.uart1printf                            0x080039c8   Section        0  usart.o(i.uart1printf)
+    i.writecmd                               0x08003a08   Section        0  oled.o(i.writecmd)
+    i.writedata                              0x08003a36   Section        0  oled.o(i.writedata)
+    .constdata                               0x08003a64   Section       16  system_stm32f1xx.o(.constdata)
+    .constdata                               0x08003a74   Section        8  system_stm32f1xx.o(.constdata)
+    .constdata                               0x08003a7c   Section       27  solgui_widget.o(.constdata)
+    .constdata                               0x08003a97   Section       27  solgui_widget.o(.constdata)
+    .constdata                               0x08003ab2   Section       29  solgui_widget.o(.constdata)
+    .constdata                               0x08003acf   Section       15  solgui_widget.o(.constdata)
+    .constdata                               0x08003ade   Section        3  solgui_widget.o(.constdata)
+    .constdata                               0x08003ae1   Section      848  font6x8_ascii.o(.constdata)
+    .conststring                             0x08003e34   Section       58  main.o(.conststring)
+    .conststring                             0x08003e70   Section        6  solgui_widget.o(.conststring)
+    .conststring                             0x08003e78   Section        6  solgui_widget.o(.conststring)
+    .conststring                             0x08003e80   Section        7  solgui_widget.o(.conststring)
+    .conststring                             0x08003e88   Section        7  solgui_widget.o(.conststring)
+    .conststring                             0x08003e90   Section        5  solgui_widget.o(.conststring)
     .data                                    0x20000000   Section       68  main.o(.data)
     .data                                    0x20000048   Section      800  usart.o(.data)
-    .data                                    0x20000368   Section        4  esp8266.o(.data)
+    .data                                    0x20000368   Section        6  esp8266.o(.data)
     flag                                     0x20000368   Data           1  esp8266.o(.data)
     flag                                     0x20000369   Data           1  esp8266.o(.data)
-    .data                                    0x2000036c   Section        1  key.o(.data)
-    key_up                                   0x2000036c   Data           1  key.o(.data)
+    flag                                     0x2000036a   Data           1  esp8266.o(.data)
+    .data                                    0x2000036e   Section        1  key.o(.data)
+    key_up                                   0x2000036e   Data           1  key.o(.data)
     .data                                    0x20000370   Section       12  stm32f1xx_hal.o(.data)
     .data                                    0x2000037c   Section        4  system_stm32f1xx.o(.data)
     .data                                    0x20000380   Section       15  solgui_menu.o(.data)
@@ -1973,30 +1976,32 @@ Image Symbol Table
     atk_8266_quit_trans                      0x08003535   Thumb Code    68  esp8266.o(i.atk_8266_quit_trans)
     delay_ms                                 0x08003585   Thumb Code    26  delay.o(i.delay_ms)
     delay_us                                 0x0800359f   Thumb Code    44  delay.o(i.delay_us)
-    esp8266_send_cmd                         0x080035cd   Thumb Code    86  esp8266.o(i.esp8266_send_cmd)
-    iic_ack                                  0x08003635   Thumb Code    56  iic.o(i.iic_ack)
-    iic_init                                 0x08003675   Thumb Code    14  iic.o(i.iic_init)
-    iic_start                                0x08003689   Thumb Code    56  iic.o(i.iic_start)
-    iic_stop                                 0x080036c9   Thumb Code    58  iic.o(i.iic_stop)
-    iic_write_byte                           0x0800370d   Thumb Code    86  iic.o(i.iic_write_byte)
-    main                                     0x0800376d   Thumb Code    70  main.o(i.main)
-    oled_clear                               0x080037b9   Thumb Code    42  oled.o(i.oled_clear)
-    oled_init                                0x080037e9   Thumb Code   186  oled.o(i.oled_init)
-    oled_refreshram                          0x080038a5   Thumb Code    60  oled.o(i.oled_refreshram)
-    systick_delayinit                        0x080038e1   Thumb Code    28  delay.o(i.systick_delayinit)
-    uart1printf                              0x080038fd   Thumb Code    56  usart.o(i.uart1printf)
-    writecmd                                 0x0800393d   Thumb Code    46  oled.o(i.writecmd)
-    writedata                                0x0800396b   Thumb Code    46  oled.o(i.writedata)
-    AHBPrescTable                            0x08003998   Data          16  system_stm32f1xx.o(.constdata)
-    APBPrescTable                            0x080039a8   Data           8  system_stm32f1xx.o(.constdata)
-    SOL_ASCII_IME_lowerchar                  0x080039b0   Data          27  solgui_widget.o(.constdata)
-    SOL_ASCII_IME_upperchar                  0x080039cb   Data          27  solgui_widget.o(.constdata)
-    SOL_ASCII_IME_Number                     0x080039e6   Data          29  solgui_widget.o(.constdata)
-    SOL_ASCII_IME_symbol                     0x08003a03   Data          15  solgui_widget.o(.constdata)
-    SOL_ASCII_IME_CRLchar                    0x08003a12   Data           3  solgui_widget.o(.constdata)
-    _Font6x8                                 0x08003a15   Data         848  font6x8_ascii.o(.constdata)
-    Region$$Table$$Base                      0x08003dcc   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08003dec   Number         0  anon$$obj.o(Region$$Table)
+    esp8266_init                             0x080035cd   Thumb Code    86  esp8266.o(i.esp8266_init)
+    esp8266_send_cmd                         0x08003669   Thumb Code    86  esp8266.o(i.esp8266_send_cmd)
+    esp_initjudge                            0x080036d1   Thumb Code    36  esp8266.o(i.esp_initjudge)
+    iic_ack                                  0x080036fd   Thumb Code    56  iic.o(i.iic_ack)
+    iic_init                                 0x0800373d   Thumb Code    14  iic.o(i.iic_init)
+    iic_start                                0x08003751   Thumb Code    56  iic.o(i.iic_start)
+    iic_stop                                 0x08003791   Thumb Code    58  iic.o(i.iic_stop)
+    iic_write_byte                           0x080037d5   Thumb Code    86  iic.o(i.iic_write_byte)
+    main                                     0x08003835   Thumb Code    74  main.o(i.main)
+    oled_clear                               0x08003885   Thumb Code    42  oled.o(i.oled_clear)
+    oled_init                                0x080038b5   Thumb Code   186  oled.o(i.oled_init)
+    oled_refreshram                          0x08003971   Thumb Code    60  oled.o(i.oled_refreshram)
+    systick_delayinit                        0x080039ad   Thumb Code    28  delay.o(i.systick_delayinit)
+    uart1printf                              0x080039c9   Thumb Code    56  usart.o(i.uart1printf)
+    writecmd                                 0x08003a09   Thumb Code    46  oled.o(i.writecmd)
+    writedata                                0x08003a37   Thumb Code    46  oled.o(i.writedata)
+    AHBPrescTable                            0x08003a64   Data          16  system_stm32f1xx.o(.constdata)
+    APBPrescTable                            0x08003a74   Data           8  system_stm32f1xx.o(.constdata)
+    SOL_ASCII_IME_lowerchar                  0x08003a7c   Data          27  solgui_widget.o(.constdata)
+    SOL_ASCII_IME_upperchar                  0x08003a97   Data          27  solgui_widget.o(.constdata)
+    SOL_ASCII_IME_Number                     0x08003ab2   Data          29  solgui_widget.o(.constdata)
+    SOL_ASCII_IME_symbol                     0x08003acf   Data          15  solgui_widget.o(.constdata)
+    SOL_ASCII_IME_CRLchar                    0x08003ade   Data           3  solgui_widget.o(.constdata)
+    _Font6x8                                 0x08003ae1   Data         848  font6x8_ascii.o(.constdata)
+    Region$$Table$$Base                      0x08003e98   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08003eb8   Number         0  anon$$obj.o(Region$$Table)
     key                                      0x20000000   Data           1  main.o(.data)
     switch_reg                               0x20000004   Data           4  main.o(.data)
     wifi_list                                0x20000008   Data          12  main.o(.data)
@@ -2005,7 +2010,7 @@ Image Symbol Table
     tcp_conn                                 0x2000002c   Data          12  main.o(.data)
     senddata                                 0x20000038   Data          12  main.o(.data)
     usart1_tx_buf                            0x20000048   Data         800  usart.o(.data)
-    usart1_rx_sta                            0x2000036a   Data           2  esp8266.o(.data)
+    usart1_rx_sta                            0x2000036c   Data           2  esp8266.o(.data)
     uwTickFreq                               0x20000370   Data           1  stm32f1xx_hal.o(.data)
     uwTickPrio                               0x20000374   Data           4  stm32f1xx_hal.o(.data)
     uwTick                                   0x20000378   Data           4  stm32f1xx_hal.o(.data)
@@ -2043,9 +2048,9 @@ Memory Map of the image
 
   Image Entry point : 0x08000131
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x000041fc, Max: 0x00040000, ABSOLUTE, COMPRESSED[0x00003e78])
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x000042c8, Max: 0x00040000, ABSOLUTE, COMPRESSED[0x00003f44])
 
-    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x00003dec, Max: 0x00040000, ABSOLUTE)
+    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x00003eb8, Max: 0x00040000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -2201,43 +2206,45 @@ Memory Map of the image
     0x08003584   0x0000001a   Code   RO          286    i.delay_ms          delay.o
     0x0800359e   0x0000002c   Code   RO          287    i.delay_us          delay.o
     0x080035ca   0x00000002   PAD
-    0x080035cc   0x00000068   Code   RO          749    i.esp8266_send_cmd  esp8266.o
-    0x08003634   0x00000040   Code   RO           13    i.iic_ack           iic.o
-    0x08003674   0x00000014   Code   RO           14    i.iic_init          iic.o
-    0x08003688   0x00000040   Code   RO           17    i.iic_start         iic.o
-    0x080036c8   0x00000044   Code   RO           18    i.iic_stop          iic.o
-    0x0800370c   0x00000060   Code   RO           20    i.iic_write_byte    iic.o
-    0x0800376c   0x0000004c   Code   RO          329    i.main              main.o
-    0x080037b8   0x00000030   Code   RO          180    i.oled_clear        oled.o
-    0x080037e8   0x000000ba   Code   RO          182    i.oled_init         oled.o
-    0x080038a2   0x00000002   PAD
-    0x080038a4   0x0000003c   Code   RO          186    i.oled_refreshram   oled.o
-    0x080038e0   0x0000001c   Code   RO          288    i.systick_delayinit  delay.o
-    0x080038fc   0x00000040   Code   RO          579    i.uart1printf       usart.o
-    0x0800393c   0x0000002e   Code   RO          190    i.writecmd          oled.o
-    0x0800396a   0x0000002e   Code   RO          191    i.writedata         oled.o
-    0x08003998   0x00000010   Data   RO         3473    .constdata          system_stm32f1xx.o
-    0x080039a8   0x00000008   Data   RO         3474    .constdata          system_stm32f1xx.o
-    0x080039b0   0x0000001b   Data   RO         3780    .constdata          solgui_widget.o
-    0x080039cb   0x0000001b   Data   RO         3781    .constdata          solgui_widget.o
-    0x080039e6   0x0000001d   Data   RO         3782    .constdata          solgui_widget.o
-    0x08003a03   0x0000000f   Data   RO         3783    .constdata          solgui_widget.o
-    0x08003a12   0x00000003   Data   RO         3784    .constdata          solgui_widget.o
-    0x08003a15   0x00000350   Data   RO         3921    .constdata          font6x8_ascii.o
-    0x08003d65   0x00000003   PAD
-    0x08003d68   0x0000003a   Data   RO          330    .conststring        main.o
-    0x08003da2   0x00000002   PAD
-    0x08003da4   0x00000006   Data   RO         3785    .conststring        solgui_widget.o
-    0x08003daa   0x00000002   PAD
-    0x08003dac   0x00000006   Data   RO         3786    .conststring        solgui_widget.o
-    0x08003db2   0x00000002   PAD
-    0x08003db4   0x00000007   Data   RO         3787    .conststring        solgui_widget.o
-    0x08003dbb   0x00000001   PAD
-    0x08003dbc   0x00000007   Data   RO         3788    .conststring        solgui_widget.o
-    0x08003dc3   0x00000001   PAD
-    0x08003dc4   0x00000005   Data   RO         3789    .conststring        solgui_widget.o
-    0x08003dc9   0x00000003   PAD
-    0x08003dcc   0x00000020   Data   RO         4136    Region$$Table       anon$$obj.o
+    0x080035cc   0x0000009c   Code   RO          748    i.esp8266_init      esp8266.o
+    0x08003668   0x00000068   Code   RO          749    i.esp8266_send_cmd  esp8266.o
+    0x080036d0   0x0000002c   Code   RO          752    i.esp_initjudge     esp8266.o
+    0x080036fc   0x00000040   Code   RO           13    i.iic_ack           iic.o
+    0x0800373c   0x00000014   Code   RO           14    i.iic_init          iic.o
+    0x08003750   0x00000040   Code   RO           17    i.iic_start         iic.o
+    0x08003790   0x00000044   Code   RO           18    i.iic_stop          iic.o
+    0x080037d4   0x00000060   Code   RO           20    i.iic_write_byte    iic.o
+    0x08003834   0x00000050   Code   RO          329    i.main              main.o
+    0x08003884   0x00000030   Code   RO          180    i.oled_clear        oled.o
+    0x080038b4   0x000000ba   Code   RO          182    i.oled_init         oled.o
+    0x0800396e   0x00000002   PAD
+    0x08003970   0x0000003c   Code   RO          186    i.oled_refreshram   oled.o
+    0x080039ac   0x0000001c   Code   RO          288    i.systick_delayinit  delay.o
+    0x080039c8   0x00000040   Code   RO          579    i.uart1printf       usart.o
+    0x08003a08   0x0000002e   Code   RO          190    i.writecmd          oled.o
+    0x08003a36   0x0000002e   Code   RO          191    i.writedata         oled.o
+    0x08003a64   0x00000010   Data   RO         3473    .constdata          system_stm32f1xx.o
+    0x08003a74   0x00000008   Data   RO         3474    .constdata          system_stm32f1xx.o
+    0x08003a7c   0x0000001b   Data   RO         3780    .constdata          solgui_widget.o
+    0x08003a97   0x0000001b   Data   RO         3781    .constdata          solgui_widget.o
+    0x08003ab2   0x0000001d   Data   RO         3782    .constdata          solgui_widget.o
+    0x08003acf   0x0000000f   Data   RO         3783    .constdata          solgui_widget.o
+    0x08003ade   0x00000003   Data   RO         3784    .constdata          solgui_widget.o
+    0x08003ae1   0x00000350   Data   RO         3921    .constdata          font6x8_ascii.o
+    0x08003e31   0x00000003   PAD
+    0x08003e34   0x0000003a   Data   RO          330    .conststring        main.o
+    0x08003e6e   0x00000002   PAD
+    0x08003e70   0x00000006   Data   RO         3785    .conststring        solgui_widget.o
+    0x08003e76   0x00000002   PAD
+    0x08003e78   0x00000006   Data   RO         3786    .conststring        solgui_widget.o
+    0x08003e7e   0x00000002   PAD
+    0x08003e80   0x00000007   Data   RO         3787    .conststring        solgui_widget.o
+    0x08003e87   0x00000001   PAD
+    0x08003e88   0x00000007   Data   RO         3788    .conststring        solgui_widget.o
+    0x08003e8f   0x00000001   PAD
+    0x08003e90   0x00000005   Data   RO         3789    .conststring        solgui_widget.o
+    0x08003e95   0x00000003   PAD
+    0x08003e98   0x00000020   Data   RO         4136    Region$$Table       anon$$obj.o
 
 
     Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x00001500, Max: 0x0000c000, ABSOLUTE, COMPRESSED[0x0000008c])
@@ -2247,9 +2254,9 @@ Memory Map of the image
     0x20000000   0x00000044   Data   RW          331    .data               main.o
     0x20000044   0x00000004   PAD
     0x20000048   0x00000320   Data   RW          582    .data               usart.o
-    0x20000368   0x00000004   Data   RW          756    .data               esp8266.o
-    0x2000036c   0x00000001   Data   RW          830    .data               key.o
-    0x2000036d   0x00000003   PAD
+    0x20000368   0x00000006   Data   RW          756    .data               esp8266.o
+    0x2000036e   0x00000001   Data   RW          830    .data               key.o
+    0x2000036f   0x00000001   PAD
     0x20000370   0x0000000c   Data   RW         1191    .data               stm32f1xx_hal.o
     0x2000037c   0x00000004   Data   RW         3475    .data               system_stm32f1xx.o
     0x20000380   0x0000000f   Data   RW         3604    .data               solgui_menu.o
@@ -2284,12 +2291,12 @@ Image component sizes
 
        168         22          0          0         48       1884   adc.o
         98          0          0          0          0       1598   delay.o
-       980        514          0          4        200       4408   esp8266.o
+      1180        592          0          6        200       5410   esp8266.o
          0          0        848          0          0        627   font6x8_ascii.o
        156          8          0          0          0        927   gpio.o
        312         42          0          0          0     504441   iic.o
        184          8          0          1          0        691   key.o
-       478        116         58         68          0       7644   main.o
+       482        116         58         68          0       7648   main.o
        386          6          0          0       1024       3757   oled.o
        128         20          0          0       1024       2791   solgui_common.o
        404          0          0          0          0       2580   solgui_gbasic.o
@@ -2314,9 +2321,9 @@ Image component sizes
        260         30          0        800        868       2452   usart.o
 
     ----------------------------------------------------------------------
-     10330       1264       1412       1040       4336     623518   Object Totals
+     10534       1342       1412       1040       4336     624524   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-        20          0         14          8          7          0   (incl. Padding)
+        20          0         14          6          7          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -2378,15 +2385,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     14440       1366       1412       1040       4336     619434   Grand Totals
-     14440       1366       1412        140       4336     619434   ELF Image Totals (compressed)
-     14440       1366       1412        140          0          0   ROM Totals
+     14644       1444       1412       1040       4336     620336   Grand Totals
+     14644       1444       1412        140       4336     620336   ELF Image Totals (compressed)
+     14644       1444       1412        140          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                15852 (  15.48kB)
+    Total RO  Size (Code + RO Data)                16056 (  15.68kB)
     Total RW  Size (RW Data + ZI Data)              5376 (   5.25kB)
-    Total ROM Size (Code + RO Data + RW Data)      15992 (  15.62kB)
+    Total ROM Size (Code + RO Data + RW Data)      16196 (  15.82kB)
 
 ==============================================================================
 

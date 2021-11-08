@@ -105,15 +105,15 @@ void ack_determine(char* strings)
 void esp8266_init(void)
 {
 	esp8266_send_cmd("ATE0","OK",200);
-	delay_ms(200);
+	delay_ms(10);
 	esp8266_send_cmd("AT+CWAUTOCONN=0","OK",200);
-	delay_ms(200);
+	delay_ms(10);
 	esp8266_send_cmd("AT+CWMODE=1","OK",200);
-	delay_ms(200);
+	delay_ms(10);
 	esp8266_send_cmd("AT+RST","Version",200);
-	delay_ms(2000);
+	delay_ms(10);
 	esp8266_send_cmd("AT+CIPMUX=0","OK",200);
-	delay_ms(200);
+	delay_ms(10);
 }
 
 void esp8266_send_data(u8* data)
@@ -147,7 +147,16 @@ void esp_initjudge(void)
 			flag=0;
 		}
 	}
-	else flag=1;
+	else 
+	{
+		if(((switch_reg>>0)&0x01)==0)
+		{
+			if(flag==0) 
+			{
+				flag=1;
+			}
+		}
+	}
 }
 
 void esp_connectjudge(void)
@@ -158,42 +167,60 @@ void esp_connectjudge(void)
 		if(flag==1)
 		{
 			esp8266_send_cmd("AT+CWJAP=\"zx\",\"12345678\"","OK",200);
-			delay_ms(2000);
+			delay_ms(10);
 			flag=0;
 		}
-		
 	}
 	else 
 	{
-		esp8266_send_cmd("AT+CWQAP","OK",200);
-		delay_ms(200);
-		flag=1;
+			if(((switch_reg>>0)&0x01)==0)
+		{
+			if(flag==0) 
+			{
+				esp8266_send_cmd("AT+CWQAP","OK",200);
+				delay_ms(10);
+				flag=1;
+			}
+		}
 	}
 }
 
 void esp_tcpjudge(void)
 {
-	if((switch_reg>>2)&0x01) 
+	static u8 flag=1;
+	if((switch_reg>>1)&0x01) 
 	{
-		esp8266_send_cmd("AT+CIPSTART=\"TCP\",\"10.132.12.29\",9000","OK",200);
-		delay_ms(4000);
+		if(flag==1)
+		{
+			esp8266_send_cmd("AT+CIPSTART=\"TCP\",\"10.132.12.29\",9000","OK",200);
+			delay_ms(10);
+			flag=0;
+		}
 	}
 	else 
 	{
-		esp8266_send_cmd("AT+CIPCLOSE","OK",200);
-		delay_ms(20);
+			if(((switch_reg>>0)&0x01)==0)
+		{
+			if(flag==0) 
+			{
+				esp8266_send_cmd("AT+CIPCLOSE","OK",200);
+				delay_ms(10);
+				flag=1;
+			}
+		}
 	}
 }
+
 void esp_senddatajudge(void)
 {
 	if((switch_reg>>3)&0x01) 
 	{
 		esp8266_send_cmd("AT+CIPSEND","OK",200);
-		delay_ms(200);
+		delay_ms(10);
 	}
 	else 
 	{
 		atk_8266_quit_trans();
-		delay_ms(200);
+		delay_ms(10);
 	}
 }
