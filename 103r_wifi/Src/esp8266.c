@@ -173,7 +173,7 @@ void esp_connectjudge(void)
 	}
 	else 
 	{
-			if(((switch_reg>>0)&0x01)==0)
+		if(((switch_reg>>0)&0x01)==0)
 		{
 			if(flag==0) 
 			{

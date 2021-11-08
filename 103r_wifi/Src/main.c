@@ -139,7 +139,6 @@ int main(void)
     /* USER CODE END WHILE */
 		key=KEY_Scan(0);
 		SOLGUI_InputKey(key);
-		
 		esp_initjudge();
 //		esp_connectjudge();
 //		esp_tcpjudge();
