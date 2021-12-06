@@ -15,7 +15,7 @@ u8 esp8266_send_cmd(u8* cmd, u8* ack, u8 waittime)
 {
 	u8 res=0;
 	uart1printf("%s\r\n",cmd);
-	ack_determine(cmd);
+//	ack_determine(cmd);
 //	oled_printf(cmd_printf,1);
 	while(waittime--)
 	{
@@ -33,7 +33,7 @@ u8 esp8266_send_cmd(u8* cmd, u8* ack, u8 waittime)
 		}
 	}
 	usart1_rx_sta=0;
-	memset(usart1_rx_buf,0,sizeof(usart1_rx_buf));
+//	memset(usart1_rx_buf,0,sizeof(usart1_rx_buf));
 	if(waittime==0) res=1;
 	return res;
 }
@@ -105,15 +105,13 @@ void ack_determine(char* strings)
 void esp8266_init(void)
 {
 	esp8266_send_cmd("ATE0","OK",200);
-	delay_ms(10);
-	esp8266_send_cmd("AT+CWAUTOCONN=0","OK",200);
-	delay_ms(10);
+	delay_ms(1000);
 	esp8266_send_cmd("AT+CWMODE=1","OK",200);
-	delay_ms(10);
+	delay_ms(1000);
+	esp8266_send_cmd("AT+CWAUTOCONN=0","OK",200);
+	delay_ms(1000);
 	esp8266_send_cmd("AT+RST","Version",200);
-	delay_ms(10);
-	esp8266_send_cmd("AT+CIPMUX=0","OK",200);
-	delay_ms(10);
+	delay_ms(1000);
 }
 
 void esp8266_send_data(u8* data)
@@ -135,7 +133,12 @@ u8 atk_8266_quit_trans(void)
 	delay_ms(500);					//µÈ´ý500ms
 	esp8266_send_cmd("AT","OK",20);//ÍË³öÍ¸´«ÅÐ¶Ï.
 }
-
+/**
+  * @brief  through inputkey decide whether init esp8266 wifi modular.
+	* @param  switch_reg: switch_reg is a global variable which has 
+	*					32bits, each bit can be a switch.
+  * @retval nothing
+  */
 void esp_initjudge(void)
 {
 	static u8 flag=1;
@@ -158,7 +161,12 @@ void esp_initjudge(void)
 		}
 	}
 }
-
+/**
+  * @brief  through inputkey decide whether esp8266 wifi modular connect ap.
+	* @param  switch_reg: switch_reg is a global variable which has 
+	*					32bits, each bit can be a switch.
+  * @retval nothing
+  */
 void esp_connectjudge(void)
 {
 	static u8 flag=1;
@@ -166,6 +174,8 @@ void esp_connectjudge(void)
 	{
 		if(flag==1)
 		{
+			esp8266_send_cmd("AT+CIPMUX=0","OK",200);
+			delay_ms(200);
 			esp8266_send_cmd("AT+CWJAP=\"zx\",\"12345678\"","OK",200);
 			delay_ms(10);
 			flag=0;
@@ -173,7 +183,7 @@ void esp_connectjudge(void)
 	}
 	else 
 	{
-		if(((switch_reg>>0)&0x01)==0)
+		if(((switch_reg>>1)&0x01)==0)
 		{
 			if(flag==0) 
 			{
@@ -188,18 +198,18 @@ void esp_connectjudge(void)
 void esp_tcpjudge(void)
 {
 	static u8 flag=1;
-	if((switch_reg>>1)&0x01) 
+	if((switch_reg>>2)&0x01) 
 	{
 		if(flag==1)
 		{
-			esp8266_send_cmd("AT+CIPSTART=\"TCP\",\"10.132.12.29\",9000","OK",200);
+			esp8266_send_cmd("AT+CIPSTART=\"TCP\",\"10.128.108.139\",9000","OK",200);
 			delay_ms(10);
 			flag=0;
 		}
 	}
 	else 
 	{
-			if(((switch_reg>>0)&0x01)==0)
+			if(((switch_reg>>2)&0x01)==0)
 		{
 			if(flag==0) 
 			{

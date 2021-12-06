@@ -10,14 +10,14 @@
 103r\solgui_widget.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
 103r\solgui_widget.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h
 103r\solgui_widget.o: ../Drivers/CMSIS/Include/core_cm3.h
-103r\solgui_widget.o: D:\program\KEIL\software\ARM\ARMCC\Bin\..\include\stdint.h
+103r\solgui_widget.o: D:\program\KEIL\ARM\ARMCC\Bin\..\include\stdint.h
 103r\solgui_widget.o: ../Drivers/CMSIS/Include/cmsis_version.h
 103r\solgui_widget.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 103r\solgui_widget.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
 103r\solgui_widget.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
 103r\solgui_widget.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 103r\solgui_widget.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-103r\solgui_widget.o: D:\program\KEIL\software\ARM\ARMCC\Bin\..\include\stddef.h
+103r\solgui_widget.o: D:\program\KEIL\ARM\ARMCC\Bin\..\include\stddef.h
 103r\solgui_widget.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
 103r\solgui_widget.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
 103r\solgui_widget.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h
@@ -36,8 +36,8 @@
 103r\solgui_widget.o: ..\SOLGUI\SOLGUI_Common.h
 103r\solgui_widget.o: ..\SOLGUI\SOLGUI_Menu.h
 103r\solgui_widget.o: ..\SOLGUI\SOLGUI_Printf.h
-103r\solgui_widget.o: D:\program\KEIL\software\ARM\ARMCC\Bin\..\include\stdarg.h
+103r\solgui_widget.o: D:\program\KEIL\ARM\ARMCC\Bin\..\include\stdarg.h
 103r\solgui_widget.o: ..\SOLGUI\SOLGUI_GBasic.h
 103r\solgui_widget.o: ..\SOLGUI\SOLGUI_Picture.h
 103r\solgui_widget.o: ..\SOLGUI\SOLGUI_Widget.h
-103r\solgui_widget.o: D:\program\KEIL\software\ARM\ARMCC\Bin\..\include\string.h
+103r\solgui_widget.o: D:\program\KEIL\ARM\ARMCC\Bin\..\include\string.h

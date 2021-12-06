@@ -3,7 +3,7 @@
 <title>Static Call Graph - [103r\103r.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image 103r\103r.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060300: Last Updated: Mon Nov 22 18:00:18 2021
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060061: Last Updated: Mon Dec 06 13:05:45 2021
 <BR><P>
 <H3>Maximum Stack Usage =        288 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -109,7 +109,7 @@ Global Symbols
 <P><STRONG><a name="[4d]"></a>__main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry.o(.ARM.Collect$$$$00000000))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f103xe.o(.text)
 </UL>
-<P><STRONG><a name="[d0]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
+<P><STRONG><a name="[cf]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
 
 <P><STRONG><a name="[4f]"></a>_main_scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
 <BR><BR>[Calls]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
@@ -119,15 +119,15 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
 </UL>
 
-<P><STRONG><a name="[d1]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
+<P><STRONG><a name="[d0]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
 
-<P><STRONG><a name="[d2]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
+<P><STRONG><a name="[d1]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
 
-<P><STRONG><a name="[d3]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
+<P><STRONG><a name="[d2]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
 
-<P><STRONG><a name="[d4]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000D))
+<P><STRONG><a name="[d3]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000D))
 
-<P><STRONG><a name="[d5]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$0000000F))
+<P><STRONG><a name="[d4]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$0000000F))
 
 <P><STRONG><a name="[5]"></a>Reset_Handler</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, startup_stm32f103xe.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f103xe.o(RESET)
@@ -318,22 +318,21 @@ Global Symbols
 <LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2ulz
 </UL>
 
-<P><STRONG><a name="[d6]"></a>_ll_ushift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llushr.o(.text), UNUSED)
+<P><STRONG><a name="[d5]"></a>_ll_ushift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llushr.o(.text), UNUSED)
 
 <P><STRONG><a name="[52]"></a>__aeabi_memset</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, memseta.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_memset$wrapper
 <LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 </UL>
 
-<P><STRONG><a name="[d7]"></a>__aeabi_memset4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[d6]"></a>__aeabi_memset4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
-<P><STRONG><a name="[d8]"></a>__aeabi_memset8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[d7]"></a>__aeabi_memset8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
 <P><STRONG><a name="[51]"></a>__aeabi_memclr</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, memseta.o(.text))
 <BR><BR>[Calls]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SOLGUI_Init
-<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp8266_send_cmd
 <LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SOLGUI_Clean
 </UL>
 
@@ -341,32 +340,21 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 </UL>
 
-<P><STRONG><a name="[d9]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[d8]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
 <P><STRONG><a name="[53]"></a>_memset$wrapper</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, memseta.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
 </UL>
 
-<P><STRONG><a name="[bd]"></a>strstr</STRONG> (Thumb, 36 bytes, Stack size 12 bytes, strstr.o(.text))
+<P><STRONG><a name="[bc]"></a>strstr</STRONG> (Thumb, 36 bytes, Stack size 12 bytes, strstr.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = strstr
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atk_8266_check_cmd
-<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ack_determine
+<BR>[Called By]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atk_8266_check_cmd
 </UL>
 
 <P><STRONG><a name="[a3]"></a>strlen</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, strlen.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart1printf
+<BR><BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart1printf
 <LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SOLGUI_Menu_Title
-</UL>
-
-<P><STRONG><a name="[bc]"></a>strcmp</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, strcmp.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = strcmp
-</UL>
-<BR>[Called By]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ack_determine
-</UL>
-
-<P><STRONG><a name="[be]"></a>strcpy</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, strcpy.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ack_determine
 </UL>
 
 <P><STRONG><a name="[54]"></a>__aeabi_dadd</STRONG> (Thumb, 322 bytes, Stack size 48 bytes, dadd.o(.text))
@@ -450,7 +438,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SOLGUI_Cursor
 </UL>
 
-<P><STRONG><a name="[da]"></a>__aeabi_cdcmpeq</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, cdcmple.o(.text), UNUSED)
+<P><STRONG><a name="[d9]"></a>__aeabi_cdcmpeq</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, cdcmple.o(.text), UNUSED)
 
 <P><STRONG><a name="[b5]"></a>__aeabi_cdcmple</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, cdcmple.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__SOLGUI_printf
@@ -460,7 +448,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
 </UL>
 
-<P><STRONG><a name="[db]"></a>__aeabi_uidiv</STRONG> (Thumb, 0 bytes, Stack size 12 bytes, uidiv.o(.text), UNUSED)
+<P><STRONG><a name="[da]"></a>__aeabi_uidiv</STRONG> (Thumb, 0 bytes, Stack size 12 bytes, uidiv.o(.text), UNUSED)
 
 <P><STRONG><a name="[ba]"></a>__aeabi_uidivmod</STRONG> (Thumb, 44 bytes, Stack size 12 bytes, uidiv.o(.text), UNUSED)
 <BR><BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
@@ -481,15 +469,15 @@ Global Symbols
 <LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2ulz
 </UL>
 
-<P><STRONG><a name="[dc]"></a>_ll_shift_l</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llshl.o(.text), UNUSED)
+<P><STRONG><a name="[db]"></a>_ll_shift_l</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llshl.o(.text), UNUSED)
 
 <P><STRONG><a name="[56]"></a>__aeabi_lasr</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, llsshr.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 </UL>
 
-<P><STRONG><a name="[dd]"></a>_ll_sshift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llsshr.o(.text), UNUSED)
+<P><STRONG><a name="[dc]"></a>_ll_sshift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llsshr.o(.text), UNUSED)
 
-<P><STRONG><a name="[de]"></a>__I$use$fp</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, iusefp.o(.text), UNUSED)
+<P><STRONG><a name="[dd]"></a>__I$use$fp</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, iusefp.o(.text), UNUSED)
 
 <P><STRONG><a name="[58]"></a>_double_round</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, depilogue.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = _double_round
@@ -525,11 +513,11 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_main_scatterload
 </UL>
 
-<P><STRONG><a name="[df]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
+<P><STRONG><a name="[de]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
 
-<P><STRONG><a name="[e0]"></a>__decompress</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __dczerorl2.o(.text), UNUSED)
+<P><STRONG><a name="[df]"></a>__decompress</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __dczerorl2.o(.text), UNUSED)
 
-<P><STRONG><a name="[e1]"></a>__decompress1</STRONG> (Thumb, 86 bytes, Stack size unknown bytes, __dczerorl2.o(.text), UNUSED)
+<P><STRONG><a name="[e0]"></a>__decompress1</STRONG> (Thumb, 86 bytes, Stack size unknown bytes, __dczerorl2.o(.text), UNUSED)
 
 <P><STRONG><a name="[65]"></a>ADC_ConversionStop_Disable</STRONG> (Thumb, 86 bytes, Stack size 16 bytes, stm32f1xx_hal_adc.o(i.ADC_ConversionStop_Disable))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = ADC_ConversionStop_Disable
@@ -1129,16 +1117,16 @@ Global Symbols
 <LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
 </UL>
 
-<P><STRONG><a name="[e2]"></a>__1vsprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0vsprintf), UNUSED)
+<P><STRONG><a name="[e1]"></a>__1vsprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0vsprintf), UNUSED)
 
-<P><STRONG><a name="[e3]"></a>__2vsprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0vsprintf), UNUSED)
+<P><STRONG><a name="[e2]"></a>__2vsprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0vsprintf), UNUSED)
 
-<P><STRONG><a name="[e4]"></a>__c89vsprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0vsprintf), UNUSED)
+<P><STRONG><a name="[e3]"></a>__c89vsprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0vsprintf), UNUSED)
 
-<P><STRONG><a name="[cf]"></a>vsprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0vsprintf))
+<P><STRONG><a name="[ce]"></a>vsprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0vsprintf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = vsprintf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart1printf
+<BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart1printf
 </UL>
 
 <P><STRONG><a name="[ad]"></a>__SOLGUI_printf</STRONG> (Thumb, 910 bytes, Stack size 128 bytes, solgui_printf.o(i.__SOLGUI_printf))
@@ -1156,11 +1144,11 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SOLGUI_printf
 </UL>
 
-<P><STRONG><a name="[e5]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
+<P><STRONG><a name="[e4]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
 
-<P><STRONG><a name="[e6]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
+<P><STRONG><a name="[e5]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
 
-<P><STRONG><a name="[e7]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
+<P><STRONG><a name="[e6]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
 
 <P><STRONG><a name="[4]"></a>_senddata</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, main.o(i._senddata))
 <BR><BR>[Stack]<UL><LI>Max Depth = 288<LI>Call Chain = _senddata &rArr; SOLGUI_Cursor &rArr; SOLGUI_printf &rArr; __SOLGUI_printf &rArr; __aeabi_drsub &rArr; __aeabi_dadd &rArr; _double_epilogue &rArr; _double_round
@@ -1202,29 +1190,19 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> main.o(.data)
 </UL>
-<P><STRONG><a name="[bb]"></a>ack_determine</STRONG> (Thumb, 278 bytes, Stack size 104 bytes, esp8266.o(i.ack_determine))
-<BR><BR>[Stack]<UL><LI>Max Depth = 116<LI>Call Chain = ack_determine &rArr; strstr
-</UL>
-<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcpy
-<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcmp
-<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strstr
-</UL>
-<BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp8266_send_cmd
-</UL>
-
-<P><STRONG><a name="[bf]"></a>atk_8266_check_cmd</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, esp8266.o(i.atk_8266_check_cmd))
+<P><STRONG><a name="[bb]"></a>atk_8266_check_cmd</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, esp8266.o(i.atk_8266_check_cmd))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = atk_8266_check_cmd &rArr; strstr
 </UL>
-<BR>[Calls]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strstr
+<BR>[Calls]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strstr
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp8266_send_cmd
+<BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp8266_send_cmd
 </UL>
 
-<P><STRONG><a name="[c0]"></a>atk_8266_quit_trans</STRONG> (Thumb, 68 bytes, Stack size 16 bytes, esp8266.o(i.atk_8266_quit_trans))
-<BR><BR>[Stack]<UL><LI>Max Depth = 156<LI>Call Chain = atk_8266_quit_trans &rArr; esp8266_send_cmd &rArr; ack_determine &rArr; strstr
+<P><STRONG><a name="[bd]"></a>atk_8266_quit_trans</STRONG> (Thumb, 68 bytes, Stack size 16 bytes, esp8266.o(i.atk_8266_quit_trans))
+<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = atk_8266_quit_trans &rArr; esp8266_send_cmd &rArr; uart1printf &rArr; vsprintf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
-<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp8266_send_cmd
+<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp8266_send_cmd
 </UL>
 <BR>[Called By]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1232,100 +1210,122 @@ Global Symbols
 <P><STRONG><a name="[86]"></a>delay_ms</STRONG> (Thumb, 26 bytes, Stack size 16 bytes, delay.o(i.delay_ms))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = delay_ms &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
+<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atk_8266_quit_trans
+<BR>[Called By]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp_tcpjudge
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp_connectjudge
+<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atk_8266_quit_trans
 <LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KEY_Scan
 <LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;oled_init
-<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp8266_send_cmd
-<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp8266_init
+<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp8266_send_cmd
+<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp8266_init
 </UL>
 
-<P><STRONG><a name="[c2]"></a>delay_us</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, delay.o(i.delay_us))
+<P><STRONG><a name="[bf]"></a>delay_us</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, delay.o(i.delay_us))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = delay_us
 </UL>
 <BR>[Called By]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
-<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iic_write_byte
-<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iic_stop
-<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iic_start
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iic_ack
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iic_write_byte
+<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iic_stop
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iic_start
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iic_ack
 </UL>
 
-<P><STRONG><a name="[c3]"></a>esp8266_init</STRONG> (Thumb, 86 bytes, Stack size 8 bytes, esp8266.o(i.esp8266_init))
-<BR><BR>[Stack]<UL><LI>Max Depth = 148<LI>Call Chain = esp8266_init &rArr; esp8266_send_cmd &rArr; ack_determine &rArr; strstr
+<P><STRONG><a name="[c0]"></a>esp8266_init</STRONG> (Thumb, 74 bytes, Stack size 8 bytes, esp8266.o(i.esp8266_init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = esp8266_init &rArr; esp8266_send_cmd &rArr; uart1printf &rArr; vsprintf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
-<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp8266_send_cmd
+<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp8266_send_cmd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp_initjudge
+<BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp_initjudge
 </UL>
 
-<P><STRONG><a name="[c1]"></a>esp8266_send_cmd</STRONG> (Thumb, 86 bytes, Stack size 24 bytes, esp8266.o(i.esp8266_send_cmd))
-<BR><BR>[Stack]<UL><LI>Max Depth = 140<LI>Call Chain = esp8266_send_cmd &rArr; ack_determine &rArr; strstr
+<P><STRONG><a name="[be]"></a>esp8266_send_cmd</STRONG> (Thumb, 68 bytes, Stack size 24 bytes, esp8266.o(i.esp8266_send_cmd))
+<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = esp8266_send_cmd &rArr; uart1printf &rArr; vsprintf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart1printf
+<BR>[Calls]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart1printf
 <LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
-<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atk_8266_check_cmd
-<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ack_determine
-<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atk_8266_check_cmd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atk_8266_quit_trans
-<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp8266_init
+<BR>[Called By]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp_tcpjudge
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp_connectjudge
+<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atk_8266_quit_trans
+<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp8266_init
 </UL>
 
-<P><STRONG><a name="[c5]"></a>esp_initjudge</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, esp8266.o(i.esp_initjudge))
-<BR><BR>[Stack]<UL><LI>Max Depth = 156<LI>Call Chain = esp_initjudge &rArr; esp8266_init &rArr; esp8266_send_cmd &rArr; ack_determine &rArr; strstr
+<P><STRONG><a name="[c2]"></a>esp_connectjudge</STRONG> (Thumb, 82 bytes, Stack size 8 bytes, esp8266.o(i.esp_connectjudge))
+<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = esp_connectjudge &rArr; esp8266_send_cmd &rArr; uart1printf &rArr; vsprintf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp8266_init
+<BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
+<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp8266_send_cmd
 </UL>
 <BR>[Called By]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[c6]"></a>iic_ack</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, iic.o(i.iic_ack))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = iic_ack &rArr; delay_us
+<P><STRONG><a name="[c3]"></a>esp_initjudge</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, esp8266.o(i.esp_initjudge))
+<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = esp_initjudge &rArr; esp8266_init &rArr; esp8266_send_cmd &rArr; uart1printf &rArr; vsprintf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
+<BR>[Calls]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp8266_init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writedata
-<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writecmd
+<BR>[Called By]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[cb]"></a>iic_init</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, iic.o(i.iic_init))
+<P><STRONG><a name="[c4]"></a>esp_tcpjudge</STRONG> (Thumb, 66 bytes, Stack size 8 bytes, esp8266.o(i.esp_tcpjudge))
+<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = esp_tcpjudge &rArr; esp8266_send_cmd &rArr; uart1printf &rArr; vsprintf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
+<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp8266_send_cmd
+</UL>
+<BR>[Called By]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[c5]"></a>iic_ack</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, iic.o(i.iic_ack))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = iic_ack &rArr; delay_us
+</UL>
+<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
+</UL>
+<BR>[Called By]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writedata
+<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writecmd
+</UL>
+
+<P><STRONG><a name="[ca]"></a>iic_init</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, iic.o(i.iic_init))
 <BR><BR>[Called By]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[c7]"></a>iic_start</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, iic.o(i.iic_start))
+<P><STRONG><a name="[c6]"></a>iic_start</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, iic.o(i.iic_start))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = iic_start &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
+<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writedata
-<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writecmd
+<BR>[Called By]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writedata
+<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writecmd
 </UL>
 
-<P><STRONG><a name="[c8]"></a>iic_stop</STRONG> (Thumb, 58 bytes, Stack size 8 bytes, iic.o(i.iic_stop))
+<P><STRONG><a name="[c7]"></a>iic_stop</STRONG> (Thumb, 58 bytes, Stack size 8 bytes, iic.o(i.iic_stop))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = iic_stop &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
+<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writedata
-<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writecmd
+<BR>[Called By]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writedata
+<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writecmd
 </UL>
 
-<P><STRONG><a name="[c9]"></a>iic_write_byte</STRONG> (Thumb, 86 bytes, Stack size 24 bytes, iic.o(i.iic_write_byte))
+<P><STRONG><a name="[c8]"></a>iic_write_byte</STRONG> (Thumb, 86 bytes, Stack size 24 bytes, iic.o(i.iic_write_byte))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = iic_write_byte &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
+<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writedata
-<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writecmd
+<BR>[Called By]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writedata
+<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writecmd
 </UL>
 
-<P><STRONG><a name="[4b]"></a>main</STRONG> (Thumb, 74 bytes, Stack size 0 bytes, main.o(i.main))
+<P><STRONG><a name="[4b]"></a>main</STRONG> (Thumb, 82 bytes, Stack size 0 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 272<LI>Call Chain = main &rArr; SOLGUI_Menu_PageStage &rArr; SOLGUI_Menu_Title &rArr; SOLGUI_printf &rArr; __SOLGUI_printf &rArr; __aeabi_drsub &rArr; __aeabi_dadd &rArr; _double_epilogue &rArr; _double_round
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp_initjudge
-<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atk_8266_quit_trans
+<BR>[Calls]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp_tcpjudge
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp_initjudge
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp_connectjudge
+<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atk_8266_quit_trans
 <LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SOLGUI_Refresh
 <LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SOLGUI_Menu_PageStage
 <LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SOLGUI_InputKey
@@ -1337,12 +1337,12 @@ Global Symbols
 <LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KEY_Scan
 <LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
 <LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
-<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;systick_delayinit
-<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iic_init
+<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;systick_delayinit
+<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iic_init
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> entry9a.o(.ARM.Collect$$$$0000000B)
 </UL>
-<P><STRONG><a name="[cc]"></a>oled_clear</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, oled.o(i.oled_clear))
+<P><STRONG><a name="[cb]"></a>oled_clear</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, oled.o(i.oled_clear))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = oled_clear &rArr; oled_refreshram &rArr; writedata &rArr; iic_write_byte &rArr; delay_us
 </UL>
 <BR>[Calls]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;oled_refreshram
@@ -1354,8 +1354,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = oled_init &rArr; oled_clear &rArr; oled_refreshram &rArr; writedata &rArr; iic_write_byte &rArr; delay_us
 </UL>
 <BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
-<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writecmd
-<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;oled_clear
+<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writecmd
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;oled_clear
 </UL>
 <BR>[Called By]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SOLGUI_Hardware_Init
 </UL>
@@ -1363,45 +1363,45 @@ Global Symbols
 <P><STRONG><a name="[98]"></a>oled_refreshram</STRONG> (Thumb, 60 bytes, Stack size 16 bytes, oled.o(i.oled_refreshram))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = oled_refreshram &rArr; writedata &rArr; iic_write_byte &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writedata
-<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writecmd
+<BR>[Calls]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writedata
+<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writecmd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;oled_clear
+<BR>[Called By]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;oled_clear
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SOLGUI_Hardware_FillScreen
 </UL>
 
-<P><STRONG><a name="[ca]"></a>systick_delayinit</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, delay.o(i.systick_delayinit))
+<P><STRONG><a name="[c9]"></a>systick_delayinit</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, delay.o(i.systick_delayinit))
 <BR><BR>[Called By]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[c4]"></a>uart1printf</STRONG> (Thumb, 56 bytes, Stack size 32 bytes, usart.o(i.uart1printf))
+<P><STRONG><a name="[c1]"></a>uart1printf</STRONG> (Thumb, 56 bytes, Stack size 32 bytes, usart.o(i.uart1printf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = uart1printf &rArr; vsprintf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vsprintf
+<BR>[Calls]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vsprintf
 <LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp8266_send_cmd
+<BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp8266_send_cmd
 </UL>
 
-<P><STRONG><a name="[cd]"></a>writecmd</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, oled.o(i.writecmd))
+<P><STRONG><a name="[cc]"></a>writecmd</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, oled.o(i.writecmd))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = writecmd &rArr; iic_write_byte &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iic_write_byte
-<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iic_stop
-<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iic_start
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iic_ack
+<BR>[Calls]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iic_write_byte
+<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iic_stop
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iic_start
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iic_ack
 </UL>
 <BR>[Called By]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;oled_refreshram
 <LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;oled_init
 </UL>
 
-<P><STRONG><a name="[ce]"></a>writedata</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, oled.o(i.writedata))
+<P><STRONG><a name="[cd]"></a>writedata</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, oled.o(i.writedata))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = writedata &rArr; iic_write_byte &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iic_write_byte
-<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iic_stop
-<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iic_start
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iic_ack
+<BR>[Calls]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iic_write_byte
+<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iic_stop
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iic_start
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iic_ack
 </UL>
 <BR>[Called By]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;oled_refreshram
 </UL>
@@ -1423,7 +1423,7 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Init
 </UL>
 
-<P><STRONG><a name="[b6]"></a>_fp_digits</STRONG> (Thumb, 366 bytes, Stack size 64 bytes, printfa.o(i._fp_digits), UNUSED)
+<P><STRONG><a name="[b6]"></a>_fp_digits</STRONG> (Thumb, 334 bytes, Stack size 56 bytes, printfa.o(i._fp_digits), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
 <LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 <LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cdrcmple

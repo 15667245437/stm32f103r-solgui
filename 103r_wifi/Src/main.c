@@ -64,6 +64,7 @@ void SystemClock_Config(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 u32 switch_reg=0;
+
 __M_PAGE(wifi_list,"wifi_list",PAGE_NULL,
 {
 	SOLGUI_Cursor(6,0,4);
@@ -140,8 +141,8 @@ int main(void)
 		key=KEY_Scan(0);
 		SOLGUI_InputKey(key);
 		esp_initjudge();
-//		esp_connectjudge();
-//		esp_tcpjudge();
+		esp_connectjudge();
+		esp_tcpjudge();
 //		esp_senddatajudge();
 		SOLGUI_Menu_PageStage();
 		SOLGUI_Refresh();
