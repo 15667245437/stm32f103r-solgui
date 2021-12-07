@@ -3,6 +3,7 @@
 #include "delay.h"
 #include "string.h"
 #include "oled.h"
+#include "adc.h"
 
 u16 usart1_rx_sta=0x0000;
 extern u8 usart1_rx_buf[max_buf];
@@ -117,7 +118,6 @@ void esp8266_init(void)
 void esp8266_send_data(u8* data)
 {
 	uart1printf("%s\r\n",data);
-	oled_printf(data,1);
 }
 
 u8 atk_8266_quit_trans(void)
@@ -130,8 +130,8 @@ u8 atk_8266_quit_trans(void)
 	delay_ms(15);					//大于串口组帧时间(10ms)
 	while((USART1->SR&0X40)==0);	//等待发送空
 	USART1->DR='+';      
-	delay_ms(500);					//等待500ms
-	esp8266_send_cmd("AT","OK",20);//退出透传判断.
+	delay_ms(15);					//等待500ms
+//	esp8266_send_cmd("AT","OK",20);//退出透传判断.
 }
 /**
   * @brief  through inputkey decide whether init esp8266 wifi modular.
@@ -202,7 +202,7 @@ void esp_tcpjudge(void)
 	{
 		if(flag==1)
 		{
-			esp8266_send_cmd("AT+CIPSTART=\"TCP\",\"10.128.108.139\",9000","OK",200);
+			esp8266_send_cmd("AT+CIPSTART=\"TCP\",\"10.128.70.222\",9000","OK",200);
 			delay_ms(10);
 			flag=0;
 		}
@@ -225,12 +225,17 @@ void esp_senddatajudge(void)
 {
 	if((switch_reg>>3)&0x01) 
 	{
+		esp8266_send_cmd("AT+CIPMODE=1","OK",200);
+		delay_ms(10);
 		esp8266_send_cmd("AT+CIPSEND","OK",200);
 		delay_ms(10);
+		TIM7->CNT=0;
+		TIM7->CR1|=1<<0; 
 	}
 	else 
 	{
-		atk_8266_quit_trans();
+		TIM7->CR1&=0x00;
 		delay_ms(10);
+		atk_8266_quit_trans();
 	}
 }

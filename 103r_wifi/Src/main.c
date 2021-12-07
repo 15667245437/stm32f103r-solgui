@@ -108,7 +108,6 @@ int main(void)
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-
   HAL_Init();
 
   /* USER CODE BEGIN Init */
@@ -127,6 +126,7 @@ int main(void)
   MX_USART1_UART_Init();
   MX_ADC1_Init();
   MX_TIM6_Init();
+  MX_TIM7_Init();
   /* USER CODE BEGIN 2 */
 	iic_init();
 	SOLGUI_Init(&wifi_list);
@@ -138,15 +138,16 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+		
+    /* USER CODE BEGIN 3 */
 		key=KEY_Scan(0);
 		SOLGUI_InputKey(key);
 		esp_initjudge();
 		esp_connectjudge();
 		esp_tcpjudge();
-//		esp_senddatajudge();
+		esp_senddatajudge();
 		SOLGUI_Menu_PageStage();
 		SOLGUI_Refresh();
-    /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
 }

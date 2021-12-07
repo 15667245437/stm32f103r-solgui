@@ -35,3 +35,4 @@
 103r\esp8266.o: ../Inc/delay.h
 103r\esp8266.o: D:\program\KEIL\ARM\ARMCC\Bin\..\include\string.h
 103r\esp8266.o: ../Inc/oled.h
+103r\esp8266.o: ../Inc/adc.h

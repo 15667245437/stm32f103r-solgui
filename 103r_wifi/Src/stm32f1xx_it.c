@@ -43,7 +43,8 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
-
+extern u16 usart1_rx_sta;
+extern u8 usart1_rx_buf[max_buf];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -58,6 +59,7 @@
 
 /* External variables --------------------------------------------------------*/
 extern TIM_HandleTypeDef htim6;
+extern TIM_HandleTypeDef htim7;
 extern UART_HandleTypeDef huart1;
 /* USER CODE BEGIN EV */
 
@@ -193,8 +195,7 @@ void SysTick_Handler(void)
 
   /* USER CODE END SysTick_IRQn 1 */
 }
-extern u16 usart1_rx_sta;
-extern u8 usart1_rx_buf[max_buf];
+
 /******************************************************************************/
 /* STM32F1xx Peripheral Interrupt Handlers                                    */
 /* Add here the Interrupt Handlers for the used peripherals.                  */
@@ -205,11 +206,10 @@ extern u8 usart1_rx_buf[max_buf];
 /**
   * @brief This function handles USART1 global interrupt.
   */
-
-
 void USART1_IRQHandler(void)
 {
-	char temp;
+  /* USER CODE BEGIN USART1_IRQn 0 */
+char temp;
 	
 	if((__HAL_UART_GET_FLAG(&huart1,UART_FLAG_RXNE)!=RESET))
 	{
@@ -229,6 +229,12 @@ void USART1_IRQHandler(void)
 			else usart1_rx_sta|=1<<15;
 		}
 	}
+		
+  /* USER CODE END USART1_IRQn 0 */
+  HAL_UART_IRQHandler(&huart1);
+  /* USER CODE BEGIN USART1_IRQn 1 */
+
+  /* USER CODE END USART1_IRQn 1 */
 }
 
 /**
@@ -243,6 +249,20 @@ void TIM6_IRQHandler(void)
   /* USER CODE BEGIN TIM6_IRQn 1 */
 
   /* USER CODE END TIM6_IRQn 1 */
+}
+
+/**
+  * @brief This function handles TIM7 global interrupt.
+  */
+void TIM7_IRQHandler(void)
+{
+  /* USER CODE BEGIN TIM7_IRQn 0 */
+
+  /* USER CODE END TIM7_IRQn 0 */
+  HAL_TIM_IRQHandler(&htim7);
+  /* USER CODE BEGIN TIM7_IRQn 1 */
+
+  /* USER CODE END TIM7_IRQn 1 */
 }
 
 /* USER CODE BEGIN 1 */
