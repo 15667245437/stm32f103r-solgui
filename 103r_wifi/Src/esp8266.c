@@ -176,7 +176,7 @@ void esp_connectjudge(void)
 		{
 			esp8266_send_cmd("AT+CIPMUX=0","OK",200);
 			delay_ms(200);
-			esp8266_send_cmd("AT+CWJAP=\"zx\",\"12345678\"","OK",200);
+			esp8266_send_cmd("AT+CWJAP=\"A204_01\",\"junhua.zhao.01\"","OK",200);
 			delay_ms(10);
 			flag=0;
 		}
@@ -202,7 +202,7 @@ void esp_tcpjudge(void)
 	{
 		if(flag==1)
 		{
-			esp8266_send_cmd("AT+CIPSTART=\"TCP\",\"10.128.70.222\",9000","OK",200);
+			esp8266_send_cmd("AT+CIPSTART=\"TCP\",\"192.168.68.170\",8086","OK",200);
 			delay_ms(10);
 			flag=0;
 		}
@@ -223,19 +223,28 @@ void esp_tcpjudge(void)
 
 void esp_senddatajudge(void)
 {
+	static u8 flag=1;
 	if((switch_reg>>3)&0x01) 
 	{
-		esp8266_send_cmd("AT+CIPMODE=1","OK",200);
-		delay_ms(10);
-		esp8266_send_cmd("AT+CIPSEND","OK",200);
-		delay_ms(10);
-		TIM7->CNT=0;
-		TIM7->CR1|=1<<0; 
+		if(flag==1)
+		{
+			esp8266_send_cmd("AT+CIPMODE=1","OK",200);
+			delay_ms(10);
+			esp8266_send_cmd("AT+CIPSEND","OK",200);
+			delay_ms(10);
+			TIM7->CNT=0;
+			TIM7->CR1|=1<<0; 
+			flag=0;
+		}
 	}
 	else 
 	{
-		TIM7->CR1&=0x00;
-		delay_ms(10);
-		atk_8266_quit_trans();
+		if(flag==0) 
+		{
+			TIM7->CR1&=0x00;
+			delay_ms(10);
+			atk_8266_quit_trans();
+			flag=1;
+		}
 	}
 }

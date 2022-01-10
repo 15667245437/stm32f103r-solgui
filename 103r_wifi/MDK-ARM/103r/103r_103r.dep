@@ -133,7 +133,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6133063D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6133063D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6133063D)
 I (../Inc/delay.h)(0x616ED441)
-F (..\Src\esp8266.c)(0x61AEC9BB)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\SOLGUI -I ..\SOLGUI\Font-I "C:\Users\13655\Desktop\project\wireless communication\103r\103r_wifi\MDK-ARM\RTE"-I D:\program\KEIL\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\program\KEIL\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o 103r\esp8266.o --omf_browse 103r\esp8266.crf --depend 103r\esp8266.d)
+F (..\Src\esp8266.c)(0x61DAF7E8)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\SOLGUI -I ..\SOLGUI\Font-I "C:\Users\13655\Desktop\project\wireless communication\103r\103r_wifi\MDK-ARM\RTE"-I D:\program\KEIL\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\program\KEIL\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o 103r\esp8266.o --omf_browse 103r\esp8266.crf --depend 103r\esp8266.d)
 I (../Inc/esp8266.h)(0x61AD6FE5)
 I (../Inc/main.h)(0x61ADAACC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6133063D)
@@ -169,7 +169,7 @@ I (../Inc/usart.h)(0x61ADAACB)
 I (../Inc/delay.h)(0x616ED441)
 I (D:\program\KEIL\ARM\ARMCC\include\string.h)(0x569DEA3A)
 I (../Inc/oled.h)(0x61AD6FE5)
-I (../Inc/adc.h)(0x61ADAACB)
+I (../Inc/adc.h)(0x61DAFA7E)
 F (../Src/main.c)(0x61AEBB84)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\SOLGUI -I ..\SOLGUI\Font-I "C:\Users\13655\Desktop\project\wireless communication\103r\103r_wifi\MDK-ARM\RTE"-I D:\program\KEIL\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\program\KEIL\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o 103r\main.o --omf_browse 103r\main.crf --depend 103r\main.d)
 I (../Inc/main.h)(0x61ADAACC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6133063D)
@@ -201,7 +201,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6133063D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6133063D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6133063D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6133063D)
-I (../Inc/adc.h)(0x61ADAACB)
+I (../Inc/adc.h)(0x61DAFA7E)
 I (../Inc/tim.h)(0x61ADAACB)
 I (../Inc/usart.h)(0x61ADAACB)
 I (../Inc/gpio.h)(0x61ADAACA)
@@ -252,8 +252,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6133063D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6133063D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6133063D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6133063D)
-F (../Src/adc.c)(0x61ADAACB)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\SOLGUI -I ..\SOLGUI\Font-I "C:\Users\13655\Desktop\project\wireless communication\103r\103r_wifi\MDK-ARM\RTE"-I D:\program\KEIL\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\program\KEIL\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o 103r\adc.o --omf_browse 103r\adc.crf --depend 103r\adc.d)
-I (../Inc/adc.h)(0x61ADAACB)
+F (../Src/adc.c)(0x61DBBAC4)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\SOLGUI -I ..\SOLGUI\Font-I "C:\Users\13655\Desktop\project\wireless communication\103r\103r_wifi\MDK-ARM\RTE"-I D:\program\KEIL\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\program\KEIL\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o 103r\adc.o --omf_browse 103r\adc.crf --depend 103r\adc.d)
+I (../Inc/adc.h)(0x61DAFA7E)
 I (../Inc/main.h)(0x61ADAACC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6133063D)
 I (../Inc/stm32f1xx_hal_conf.h)(0x61ADAACB)
@@ -318,7 +318,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6133063D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6133063D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6133063D)
 I (../Inc/esp8266.h)(0x61AD6FE5)
-I (../Inc/adc.h)(0x61ADAACB)
+I (../Inc/adc.h)(0x61DAFA7E)
 F (../Src/usart.c)(0x61ADC429)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\SOLGUI -I ..\SOLGUI\Font-I "C:\Users\13655\Desktop\project\wireless communication\103r\103r_wifi\MDK-ARM\RTE"-I D:\program\KEIL\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\program\KEIL\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o 103r\usart.o --omf_browse 103r\usart.crf --depend 103r\usart.d)
 I (../Inc/usart.h)(0x61ADAACB)
 I (../Inc/main.h)(0x61ADAACC)

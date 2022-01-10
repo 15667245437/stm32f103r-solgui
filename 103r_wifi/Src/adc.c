@@ -137,17 +137,22 @@ unsigned int get_adc_average(char times)
 
 char press_data[5]="00000";
 int adc_value;
-
+u8 percentage=0;
 char* get_pressure_data(void)
 {
 	adc_value=get_adc_average(20);
-	press_data[4]='\0';
-	press_data[3]=adc_value%10+48;
-	press_data[2]=(adc_value/10)%10+48;
-	press_data[1]=(adc_value/100)%10+48;
-	press_data[0]=(adc_value/1000)+48;
+
+	percentage=(u8)((float)adc_value/4096*100);
+
+//	press_data[4]='\0';
+//	press_data[3]=adc_value%10+48;
+	press_data[2]='\0';
+	press_data[1]=percentage%10+48;
+	press_data[0]=(percentage/10)%10+48;
 	return press_data;
 }
+
+
 /* USER CODE END 1 */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
